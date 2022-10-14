@@ -1,7 +1,7 @@
 <?php 
 
 
-class Controller {
+class App{
 
     protected $controller = "home";
     protected $method = "index";
@@ -22,10 +22,10 @@ class Controller {
     public function route_maker(){
         $arr_url = $this->parse_url(); //parse url: it returns an array containing controller, method and params
         $this->controller = $arr_url[0]; //declare controller.
-        $file = "../controller/" . $this->controller . "_controller.php"; //declare including.
+        $file = "../controller/" . $this->controller . ".php"; //declare including.
         if (file_exists($file)){ //if the file exists do the following:
             require_once $file; //including controller.
-            unset($arr_url[0]); //deleting the value of $arr_url[0] to zero :D
+            unset($arr_url[0]); //deleting the value of $arr_url[0] to zero :D (to be more performant)
         }
     }
 }

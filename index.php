@@ -1,8 +1,8 @@
 <?php 
 
-include "./core/Controller.php";
+include "./core/App.php";
 
-$app = new Controller;
+$app = new App;
 
 
 ?>
