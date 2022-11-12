@@ -4,14 +4,14 @@ include "./core/Controller.php";
 class Api extends Controller{
     public function coronavirus(){
         $model = $this->model('api');
-        $corona = $model->get_corona_info();
-        echo $corona; //return a json encoded corona virus statistics to the terminal. 
+        $json_corona = $model->get_corona_info();
+        echo $json_corona;
     }
 
     public function doginfo(){
         $model = $this->model('api');
-        $dog = $model->get_dog_info();
-        echo $dog; //return random dog info.
+        $json_dog = $model->get_dog_info();
+        echo $json_dog;
     }
 
     public function test(...$params){
